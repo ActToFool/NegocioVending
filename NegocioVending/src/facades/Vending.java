@@ -5,6 +5,8 @@
  */
 package facades;
 
+import entidades.DTOReporte;
+import entidades.DTOTotal;
 import entidades.Denominacion;
 import entidades.Linea;
 import entidades.Producto;

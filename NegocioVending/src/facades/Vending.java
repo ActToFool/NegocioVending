@@ -10,6 +10,10 @@ import entidades.DTOTotal;
 import entidades.Denominacion;
 import entidades.Linea;
 import entidades.Producto;
+import facade.GestionProducto;
+import facade.IGestionProducto;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -17,6 +21,17 @@ import entidades.Producto;
  */
 public class Vending implements IVending{
 
+    Map<Integer, Producto> catalogo;
+    IGestionProducto iGstProducto;
+
+    public Vending() {
+        catalogo = new HashMap<>();
+        System.out.println("lleeee0000");
+        //iGstProducto =  new GestionProducto();
+        //iGstProducto.cargarProductos();
+
+    }
+    
     @Override
     public DTOTotal agregarLinea(Producto p_producto, int cantidad) {
         return null;
@@ -34,6 +49,10 @@ public class Vending implements IVending{
 
     @Override
     public boolean nuevaVenta() {
+        if(iGstProducto== null){
+            iGstProducto = new GestionProducto();
+            iGstProducto.cargarMonedas();
+        }
         return false;
     }
 

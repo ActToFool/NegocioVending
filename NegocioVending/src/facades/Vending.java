@@ -52,13 +52,14 @@ public class Vending implements IVending{
             else{
                 lineaPro = new Linea(cantidad, p_producto);
                 this.ventaActual.getLineas().add(lineaPro);
+                ventaActual.getLineas();
             }
         }
         
         return null;
     }
     
-    //Método punto 3 -- c
+    //Método punto 3 -- c.
 
     //Metodo privado que busca si el producto selecionado ya existe en una linea anterior
     private Linea buscarProductoEnLinea(Producto p_producto){
